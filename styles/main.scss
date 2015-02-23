@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  background: #fff;
+}
+
+.header-container {
+  width: 100%;
+  position:relative;
+  height: 75px;
+  background: #f0f0f0;;
+  border-bottom: 1px solid #333;
+}
+
+.header {
+  width: 1080px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 15px;
+  position:relative;;
+}
+
+.pagebody {
+  width:1080px;
+  margin:0 auto;
+  margin-top:30px;
+  position:relative;
+}
+
+.bookmark-content {
+  width:800px;
+  display:inline-block;
+
+}
+
+.tag-content {
+  width:250px;
+  display:inline-block;
+}
+
+.bookmark-content ul {
+  list-style:none;
+}
+
+.bookmark-content li {
+  display:inline-block;
+}
+
+.tag-content ul {
+  list-style:none;
+}
