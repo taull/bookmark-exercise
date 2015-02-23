@@ -14,32 +14,35 @@
   <div class="pagebody">
 
     <div class="bookmark-content">
-      <ul>
-        <li class="bookmark-title"><p>Yahoo</p></li>
-        <li class="bookmark-url"><p>www.yahoo.com</p></li>
-        <li class="bookmark-description"><p>A friendly search engine and news database</p></li>
-        <li class="bookmark-tags"><p>News</p></li>
-      </ul>
+      <div class="bookmark-listing"></div>
+      <script type="text/template" data-template-name="bookmark-list">
+        <ul>
+          <li class="bookmark-title"><p><%= bookmark_title %></p></li>
+          <li class="bookmark-url"><p><%= bookmark_url %></p></li>
+          <li class="bookmark-description"><p><%= bookmark_description %></p></li>
+          <li class="bookmark-tag"><p><%= bookmark_tag %></p></li>
+        </ul>
+      </script>
     </div>
 
     <div class="sidebar">
 
-      <form id="item-info">
-        <div class="item">
+      <form id="bookmark-info">
+        <div class="bookmark">
           <div class="add-bookmark-title">
-            <label>Item Title</label>
+            <label>Bookmark Title</label>
             <input type="text" class="bookmarkTitleInput"/>
           </div>
           <div class="add-bookmark-url">
-            <label>Item Description</label>
+            <label>Bookmark URL</label>
             <input type="text" class="bookmarkUrlInput" />
           </div>
           <div class="add-bookmark-description">
-            <label>Item Price ($)</label>
+            <label>Bookmark Description ($)</label>
             <input type="text" class="bookmarkDescriptionInput"/>
           </div>
           <div class="add-bookmark-tag">
-            <label>Item Price ($)</label>
+            <label>Bookmark Tag</label>
             <input type="text" class="bookmarkTagInput"/>
           </div>
           <div class="form-button">
@@ -49,9 +52,12 @@
       </form>
 
       <div class="tag-content">
-        <ul>
-          <li class="tag-category">News</li>
-        </ul>
+        <div class="bookmark-listing"></div>
+        <script type="text/template" data-template-name="bookmark-list">
+          <ul>
+            <li class="tag-category"><p><%= bookmark_tag %></p></li>
+          </ul>
+        </script>
       </div>
     </div>
 
