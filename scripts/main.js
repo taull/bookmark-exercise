@@ -21,6 +21,12 @@
     parse: function(response) { return response.results;}
   });
 
+  // 
+  // var Tags = Backbone.Collection.extend({
+  //   model: Tag,
+  //   url: "https://api.parse.com/1/classes/bookmarks",
+  //   parse: function(response) { return response.results;}
+  // });
 
   //------------
   // VIEWS
@@ -56,15 +62,14 @@
 
         },
 
-        render: function() {
-          var that = this;
-          this.collection.each(function(bookmark) {
-            that.$el.append( that.template( bookmark.toJSON() ) );
-        });
-          return this;
-        }
-      });
-
+    render: function() {
+      var that = this;
+      this.collection.each(function(bookmark) {
+        that.$el.append( that.template( bookmark.toJSON() ) );
+    });
+      return this;
+    }
+  });
 
   // var TagListView = Backbone.View.extend ({
   //
@@ -84,6 +89,8 @@
   //   }
   // });
 
+
+
     //--------------
     // ROUTER
     //--------------
@@ -96,6 +103,8 @@
             initialize: function() {
               this.bookmarks = new Bookmarks();
               this.bookmarksList = new BookmarkListView({collection: this.bookmarks});
+              // this.tags = new Tags();
+              // this.tagsList = new TagListView({collection: this.tags});
               },
 
             index: function(){
@@ -103,19 +112,22 @@
               this.bookmarks.fetch().done(function() {
                 that.bookmarksList.render();
                 });
+              // this.tags.fetch().done(function() {
+              //   that.tagsList.render();
+              // });
               },
 
-            showBookmark: function(id){
+            // showBookmark: function(id){
+            //
+            //   var that = this;
+            //
+            //   this.bookmarks.fetch().done(function() {
+            //     foundModel = that.bookmarks.get(id);
+            //     var bookmarkFull = new BookmarkFullView({model: foundModel});
+            //     bookmarkFull.render();
+            //     $('.full-bookmark').html(bookmarkFull.el);
+            // });
 
-              var that = this;
-
-              this.bookmarks.fetch().done(function() {
-                foundModel = that.bookmarks.get(id);
-                var bookmarkFull = new BookmarkFullView({model: foundModel});
-                bookmarkFull.render();
-                $('.full-bookmark').html(bookmarkFull.el);
-            });
-          }
         });
 
   //----------------
